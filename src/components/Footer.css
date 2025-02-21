@@ -1,0 +1,40 @@
+.footer {
+    background-color: #0F172A;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: center;
+}
+
+.foot-1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.foot-1 h2 {
+    font-family: DM Sans;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 27px;
+    line-height: 48px;
+    letter-spacing: 0px;
+    color: #ffffff;
+}
+
+footer p {
+    color: #ffffff;
+    font-size: 14px;
+    margin: 5px;
+}
+
+.website-card {
+    display: flex;
+    gap: 5px;
+
+    a {
+        color: #ffffff;
+    }
+
+}

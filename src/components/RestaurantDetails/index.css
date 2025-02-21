@@ -1,0 +1,56 @@
+.bg-banner-card {
+    height: 30vh;
+    padding: 0;
+    margin: 0;
+    background-image: url('../../assets/Frame.png');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-card {
+    width: 90%;
+    height: 70%;
+    display: flex;
+    gap: 10px;
+}
+
+.image-card-food {
+    width: 40%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.image-card-food img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.banner-details-food {
+    width: 50%;
+    flex-grow: 1;
+}
+
+.banner-details-food h5 {
+    color: #fff;
+    font-size: 16px;
+    margin: 0;
+}
+
+.banner-details-food p {
+    color: #999;
+    line-height: 1.4rem;
+    font-size: 12px;
+    margin: 0;
+}
+
+.food-list {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    gap: 10px;
+    flex-wrap: wrap;
+}

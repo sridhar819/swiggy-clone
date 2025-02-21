@@ -1,0 +1,98 @@
+.slider {
+    width: 100%;
+    align-self: center;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.banner-image-card {
+    width: 80%;
+    height: 200px;
+}
+
+.banner-img {
+    height: 100%;
+    width: 100%;
+}
+
+@media (orientation:landscape),
+(min-width:766px) {
+    .slider {
+        height: 250px;
+    }
+
+    .banner-image-card {
+        height: 250px;
+    }
+    .banner-img{
+        object-fit: cover;
+    }
+
+}
+
+.loading-view {
+    border: 1px solid gray;
+    border-radius: 20px;
+    width: 60%;
+    height: 8px;
+    overflow: hidden;
+    margin: 30px auto;
+}
+
+.loader {
+    width: 100%;
+    border-radius: 20px;
+    height: 100%;
+    background-color: red;
+
+}
+
+.restaurant-item {
+    display: flex;
+    width: 94%;
+    margin: auto;
+    gap: 10px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.sort-card {
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
+    margin-bottom: 10px;
+}
+
+.sort-card h2 {
+    font-size: 23px;
+    font-weight: 500;
+    color: rgb(227, 144, 36);
+}
+
+.sort-card p {
+    color: #ba7618;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.sort-card div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    button {
+        background-color: transparent;
+        font-size: 25px;
+        border: none;
+        color: tomato;
+        outline: none;
+    }
+
+    select {
+        outline: none;
+        color: tomato;
+        font-weight: 600;
+        border: none;
+    }
+}

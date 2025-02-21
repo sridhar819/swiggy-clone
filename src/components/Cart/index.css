@@ -1,0 +1,24 @@
+.cart-container {
+      width: 100%;
+      min-height: 50vh;
+      display: flex;
+      padding: 10px;
+      flex-direction: column;
+}
+
+.title {
+      font-weight: 700;
+      font-size: 20px;
+      color: rgb(54, 29, 29);
+}
+
+.total-rupees {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+
+      h2 {
+            color: #555;
+            font-size: 19px;
+      }
+}
