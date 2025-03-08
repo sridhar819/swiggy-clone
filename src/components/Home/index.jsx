@@ -22,8 +22,7 @@ const Home = () => {
     const [offerList, setOfferData] = useState({ stage: offerStages.initial, offers: [] });
     const [activepage, setPage] = useState(1)
     const [restaurantData, setRestaurantData] = useState({ stage: restaurantStage.initial, restaurantList: [] });
-    const [activeOption, setOption] = useState(optionList[0].value)
-
+    const [activeOption, setOption] = useState(optionList[0].value);
 
     const [bar, setBar] = useState(0)
 
@@ -218,7 +217,7 @@ function getResData(restaurantData, setPage, activepage, setBar, setRestaurantDa
                             setRestaurantData({ stage: restaurantStage.initial });
                         }
                     }} className="btn btn-danger" type="button">prev</button>
-                <p className="text-danger fw-bold fs-5 pt-3">{activepage}</p>
+                <mark className="text-danger fw-bold fs-5 px-3">{activepage}</mark>
                 <button
                     disabled={activepage >= 4}
                     onClick={() => {

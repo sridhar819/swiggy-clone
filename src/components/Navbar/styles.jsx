@@ -1,9 +1,19 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(NavLink)`
        text-decoration: none;
          color:#fff;
+         width: 100%;
+         padding: 5px 10px;
+
+         &.active{
+          border-radius: 6px;
+          font-weight: 500;
+          background-color: black;
+          color: #e7eb18 !important;
+         }
+
 `
 
 export const Nav = styled.nav`
@@ -41,7 +51,6 @@ export const MenuCard = styled.ul`
          display: none;
          position: fixed;
          top: 0;
-         display: flex;
          z-index: 2;
          flex-direction: column;
          right: 0;
@@ -50,8 +59,9 @@ export const MenuCard = styled.ul`
          height: 100%;
          background-color: #222;
          animation: slide 1s;
-         @media (orientation:portrait) and (max-width:766px) {
-         display: inline-block;
+
+         @media (max-width:766px) {
+         display: flex;
          }
          @keyframes slide {
             0%{
@@ -70,17 +80,18 @@ export const MenuList = styled.ul`
       padding: 0;
       margin: 2cm 0px;
       list-style: none;
+      width: 100%;
           
       li{
-        border-bottom:1px solid #888;
         padding: 6px 10px;
         color: lightblue;
         cursor: pointer;
+        width: 100%;
+        display: flex;
+        padding: 0;
+        
       }
-      li:nth-child(even){
-        background: linear-gradient(#333,#444);
-        color: white;
-      }
+      
       
 `
 export const Large = styled.ul`

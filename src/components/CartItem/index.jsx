@@ -9,7 +9,8 @@ import './index.css'
 
 
 const CartItem = () => {
-    const { cartList, increaseCount, decreaseCount, removeCart } = useContext(CartContext)
+    const { cartList, increaseCount, decreaseCount, removeCart } = useContext(CartContext);
+    
     return (
         <div>
             {cartList.map(each => (

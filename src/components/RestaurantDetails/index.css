@@ -50,7 +50,13 @@
 .food-list {
     display: flex;
     width: 90%;
-    margin: 0 auto;
+    margin: 8px auto;
     gap: 10px;
     flex-wrap: wrap;
+}
+
+@media screen and (min-width:1001px) {
+    .food-list {
+        margin: 1rem auto;
+    }
 }

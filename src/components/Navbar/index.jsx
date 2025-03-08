@@ -7,23 +7,32 @@ import 'reactjs-popup/dist/index.css';
 
 import Cookies from 'js-cookie'
 import { Nav, MenuBtn, MenuCard, Large, Modal, MenuList, NavTitle, StyledLink } from './styles'
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import CartContext from "../../Context";
 
+const subClass = {
+    background: "red",
+    borderRadius: "50%",
+    padding: "5px",
+    color: "#ffff"
+}
 
 const Navbar = () => {
-    const [showMenu, togglemenu] = useState(false)
+    const [showMenu, togglemenu] = useState(false);
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const handleLogout = () => {
         Cookies.remove('jwt_token')
         navigate('/login')
     }
 
+    const { cartList } = useContext(CartContext);
+
     return (<Nav>
 
-        <StyledLink to={"/"}>
+        <StyledLink style={{ background: "transparent", border: "none" }} to={"/"}>
             <div className="d-flex align-items-center">
                 <img src={weblogo} alt="weblogo" />
                 <NavTitle>Tasty Kitchen</NavTitle>
@@ -36,7 +45,7 @@ const Navbar = () => {
         <Large>
             <li><StyledLink style={{ color: "#222" }} to={"/"}>Home</StyledLink></li>
             <li><StyledLink style={{ color: "#222" }} to={"/about"}>About</StyledLink></li>
-            <li><StyledLink style={{ color: "#222" }} to={"/cart"}>Cart</StyledLink></li>
+            <li><StyledLink style={{ color: "#222" }} to={"/cart"}>Cart{cartList.length > 0 && <sup style={subClass}>{cartList.length}</sup>}</StyledLink></li>
             <Popup
                 trigger={<button className="btn btn-danger" type="button">Logout</button>}
                 modal
@@ -62,7 +71,7 @@ const Navbar = () => {
                 <MenuList>
                     <li><StyledLink to={"/"}>Home</StyledLink></li>
                     <li><StyledLink to={"/about"}>About</StyledLink></li>
-                    <li><StyledLink to={"/cart"}>Cart</StyledLink></li>
+                    <li><StyledLink to={"/cart"}>Cart {cartList.length > 0 && <sup style={{ background: "red", padding: "3px", borderRadius: "50%" }}>{cartList.length}</sup>}</StyledLink></li>
                     <Popup
                         width="70%"
                         trigger={<button className="btn btn-danger mt-3" type="button">Logout</button>}

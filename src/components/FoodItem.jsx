@@ -14,7 +14,7 @@ const FoodItem = ({ details }) => {
     return (
         <div className='food-item'>
             <div className="image-card-food-item">
-                <img src={imageUrl} alt='res' />
+                <img className="img-fluid" src={imageUrl} alt='res' />
             </div>
             <div className="d-flex align-items-center justify-content-between">
                 <div className="food-item-details">
