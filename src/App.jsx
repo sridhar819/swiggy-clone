@@ -8,13 +8,18 @@ import Cart from './components/Cart'
 import './App.css'
 import { useEffect, useState } from 'react'
 
-const parseData = JSON.parse(localStorage.getItem("cartList"))
+const parseData = JSON.parse(localStorage.getItem("cartList"));
+const parseisOrder = JSON.parse(localStorage.getItem('isOrder'))
 
 const App = () => {
 
-  const [cartList, setCart] = useState(parseData ? parseData : [])
+  const [cartList, setCart] = useState(parseData ? parseData : []);
+  const [isOrderPlaced, setOrder] = useState(parseisOrder?parseisOrder:false);
 
-  console.log(cartList, "crlist")
+  const placeOrder = () => {
+    setCart([])
+    setOrder(pre => !pre)
+  }
 
   const increaseCount = id => {
     setCart(prevCart => prevCart.map(each => {
@@ -47,15 +52,28 @@ const App = () => {
 
   const addCart = (food) => {
     setCart((prevCart) => [...prevCart, { ...food, quantity: 1 }]);
+    setOrder(false)
 
   }
+
+  useEffect(() => {
+    localStorage.setItem('isOrder', JSON.stringify(isOrderPlaced))
+  }, [isOrderPlaced])
 
   useEffect(() => {
     localStorage.setItem('cartList', JSON.stringify(cartList))
   }, [cartList])
 
   return (
-    <CartContext.Provider value={{ cartList, addCart, removeCart, increaseCount, decreaseCount }}>
+    <CartContext.Provider value={{
+      cartList,
+      isOrderPlaced,
+      addCart,
+      removeCart,
+      increaseCount,
+      decreaseCount,
+      placeOrder
+    }}>
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
