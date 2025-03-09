@@ -11,12 +11,25 @@
     width: 30%;
 }
 
-@media (orientation:landscape),(min-width:766px) {
-    .cart-img{
+
+.cart-details {
+   display: block;
+}
+
+@media (orientation:landscape),
+(min-width:766px) {
+    .cart-img {
         display: flex;
     }
-    
+
+    .cart-details {
+        display: flex;
+        width: 40%;
+        justify-content: space-between;
+    }
+
 }
+
 .cart-img h2 {
     font-size: 15px;
     margin-top: 3px;
