@@ -22,7 +22,7 @@ const Cart = () => {
             <Navbar />
             {cartList.length === 0 ?
                 <div className='d-flex flex-column align-items-center pt-4' style={{ height: "71vh" }}>
-                    <img width="40%" src={imgUrl} alt="" />
+                    <img width="200px" src={imgUrl} alt="" />
                     <h1 className='text-center'>
                         {isOrderPlaced ?
                             "Payment Successful" :
